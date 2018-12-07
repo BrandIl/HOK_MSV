@@ -1,21 +1,21 @@
 const express = require('express')
 const app = express()
-const port = 3000
-import Data from './models/data.model'
+const port = 3033
 
-console.log(new Data({
-    institution: {
-        name: 'aa',
-        code: '555'
-    },
-    serialNumber: '00',
-    creationDate: '01012010',
-    paymentDate: '00012010',
-    senderInstitution: '5555',
-    actions:[{}]
-}));
+
+import creditRoute from './routes/credit.route';
+
+
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    console.log(path.join(__dirname, 'pages'), path.join(__dirname, '../pages'));
+    res.sendFile(path.join(__dirname, '../pages/index.html'));
 })
+
+app.get('/aa', (req, res) => {
+   
+   
+});
+
+app.use('/api/credit', creditRoute);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
