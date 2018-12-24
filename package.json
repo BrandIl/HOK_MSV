@@ -4,8 +4,8 @@
   "description": "",
   "main": "/server/dist/main.js",
   "scripts": {
-    "build": "webpack",
-    "heroku-postbuild": "webpack -p",
+    "build": "server/webpack",
+    "heroku-postbuild": "server/webpack -p",
     "start": "nodemon server/src/app.js  --exec babel-node  --presets es2015,stage-2"
   },
   "repository": {
