@@ -29,5 +29,13 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dateformat": "^3.0.3",
+    "express": "^4.16.2",
+    "iconv-lite": "^0.4.24",
+    "joi": "^13.7.0"
+  },
   "homepage": "https://github.com/BrandIl/HOK_MSV#readme"
 }
