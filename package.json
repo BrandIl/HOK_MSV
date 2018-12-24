@@ -1,0 +1,21 @@
+{
+  "name": "hok_msv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/server/dist/main.js",
+  "scripts": {
+    "build": "webpack",
+    "heroku-postbuild": "webpack -p",
+    "start": "nodemon server/src/app.js  --exec babel-node  --presets es2015,stage-2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandIl/HOK_MSV.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandIl/HOK_MSV/issues"
+  },
+  "homepage": "https://github.com/BrandIl/HOK_MSV#readme"
+}
