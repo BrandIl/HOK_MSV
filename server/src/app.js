@@ -19,5 +19,4 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/credit', creditRoute);
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(process.env.PORT ||port, () => console.log(`Example app listening on port ${port}!`));
