@@ -12,15 +12,9 @@ app.use(bodyParser.json());
 app.use('/', express.static(path.join(__dirname, 'pages')))
 
 app.get('/', (req, res) => {
-    try{
     console.log(__dirname);
-    console.log('00000000000000000000000000000000000000000000000000000000000000');
-
     //console.log(path.join(__dirname, 'pages'), path.join(__dirname, '../pages'));
-    res.sendFile(path.join(__dirname, './pages/index.html'));}
-    catch(e){
-        console.log(e);
-    }
+    res.sendFile(path.join(__dirname, './pages/index.html'));
 })
 
 

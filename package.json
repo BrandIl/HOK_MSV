@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "heroku-postbuild": "webpack -p",
-    "start": "nodemon server/src/app.js  --exec babel-node  --presets es2015,stage-2"
+    "start": "node server/src/app.js  --exec babel-node  --presets es2015,stage-2"
   },
   "repository": {
     "type": "git",
