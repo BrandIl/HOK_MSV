@@ -10,15 +10,7 @@ export default class CreditMSVService {
         this._fetchHandler = new FetchHandler();
     }
 
-    _downloadFile(file) {
-        const { fileName, content } = file;
-        const blob = new Blob([new Uint8Array(content.data)]);
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = fileName;
-        a.click();
-    }
+
 
     uploadFile(file) {
         console.log(`${JSON.stringify(file)}`);
@@ -29,7 +21,8 @@ export default class CreditMSVService {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(file)
-        }).then(this._downloadFile);
+        });
+        //.then(this._downloadFile);
 
 
     }

@@ -5,8 +5,9 @@ import '../components/fileinput.component'
 
 export default {
     data: function () {
-        return {           
+        return {
             data: [],
+            fileName: '',
             mapping: {
                 bankID: 'מס\' בנק',
                 accountNumber: 'מס\' חשבון',
@@ -18,21 +19,29 @@ export default {
             }
 
 
+
         }
     },
     methods: {
-        loadCreditRows(data) {
+        loadCreditRows(fileName, data) {
             this.data = data.map(dt => {
                 return new Credit(dt)
             });
+            this.fileName = `${fileName}.MSV`;
+        },
+        downloadFile(file) {
+            const { fileName, content } = file;
+            const blob = new Blob([new Uint8Array(content.data)]);
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = this.fileName;
+            a.click();
         },
         getMsvFile() {
             return new CreditMSVService()
                 .uploadFile(this.data)
-                .then(orgs => {
-                    console.log(`${JSON.stringify(orgs)}`);
-                    //    this.organizations = orgs;
-                })
+                .then(this.downloadFile)
         }
     },
     render() {
